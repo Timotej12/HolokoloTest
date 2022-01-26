@@ -1,6 +1,31 @@
+<?php
+
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Http;
+
+//$response = Http::post("https://nameday.abalin.net/getdate", [
+//    'name' => 'Jakub',
+//    'country' => 'cz',
+//]);
+//json_decode($response);
+//$result = $response->body()->get('status');
+//dd($result);
+$response = Http::acceptJson()->post("https://nameday.abalin.net/namedays", [
+    'country' => 'sk',
+    'day' => '1',
+    'month' => '1',
+]);
+
+
+$result = $response->json('data');
+$di = $result['namedays'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,6 +46,10 @@
         </style>
     </head>
     <body class="antialiased">
+
+         <h1>{{$year}}</h1>
+
+
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -37,6 +66,8 @@
             @endif
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                <h1></h1>
+
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
                         <g clip-path="url(#clip0)" fill="#EF3B2D">
@@ -128,5 +159,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>
