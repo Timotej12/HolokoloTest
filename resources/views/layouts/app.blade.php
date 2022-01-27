@@ -28,16 +28,12 @@
             </div>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto">
-
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto">
-                    <!-- Authentication Links -->
-
-                </ul>
+                <div class="justify-content-center">
+                    <a class="link-light" href="{{url('')}}">Hlavna stranka</a>
+                </div>
+               <div class="justify-content-center">
+                   <a class="link-light" href="{{url('table')}}">Tabulka menin</a>
+               </div>
 
             </div>
         </div>

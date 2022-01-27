@@ -13,5 +13,7 @@ class NamedayController extends Controller
        return view('welcome',['names'=>$names]);
    }
 
+
+
 }
 
