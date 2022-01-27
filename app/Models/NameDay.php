@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class NameDay extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'date',
+        'search_name'
+    ];
+
+//    protected $casts = [
+//        'email_verified_at' => 'datetime',
+//    ];
 }

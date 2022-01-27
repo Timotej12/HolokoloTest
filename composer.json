@@ -6,15 +6,16 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "ext-calendar": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "6.5",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "xnekv03/nameday-api": "^2.0",
-        "ext-json": "*",
-        "ext-curl": "*",
-        "ext-calendar": "*"
+        "laravel/ui": "^3.4",
+        "xnekv03/nameday-api": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

@@ -37,6 +37,7 @@ class DownloadNamedays extends Command
      * Execute the console command.
      *
      * @return int
+     * @throws \Exception
      */
     public function handle()
     {
@@ -53,12 +54,12 @@ class DownloadNamedays extends Command
                $result = $result['data'];
                $namedays = $result['namedays'];
                $name = $namedays['sk'];
+
                $date = new DateTime($year . '/' . $month . '/' . $day_in_month);
-                DB::table('name_days')->insert([
-                   ['name' => $name ,
-                     'date' => $date
-                       ],
-               ]);
+                DB::table('name_days')->upsert(
+                    ['name' => $name, 'date'=> $date, 'search_name' => $name ],
+                    ['name', 'date', 'search_name']
+                );
 
             }
 
