@@ -17,12 +17,4 @@ class NameDay extends Model
         'date',
         'search_name'
     ];
-
-    public function profile(){
-
-    }
-
-//    protected $casts = [
-//        'email_verified_at' => 'datetime',
-//    ];
 }
