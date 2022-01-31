@@ -9,7 +9,7 @@
                 <div class="card border-1" >
 
                     <div class="card-header text-center">
-                        <h1 class="p-lg-2">Tabuľka menin</h1>
+                        <h1 class="p-lg-2">Tabuľka menín</h1>
                     </div>
                     <div class="card-body text-center">
                         <table class="table table-striped">
@@ -21,8 +21,7 @@
                                 <tr>
                                     <td><strong>{{ $value->name }}</strong></td>
                                     <td>{{ $value->date }}</td>
-                                    <input type="hidden" value="{{$value->name}}" name="data-name"/>
-                                    <td><button class="btn btn-secondary" onclick="window.location='{{ url("profile/detail/$value->name")}}'">Zobraz profil</button></td>
+                                    <td><a class="btn btn-secondary" href="{{ url("profile/detail/$value->name")}}">Zobraz profil</a></td>
                                 </tr>
                             @endforeach
                         </table>

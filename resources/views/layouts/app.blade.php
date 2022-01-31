@@ -64,19 +64,31 @@
 </html>
 
 <script>
+    $( 'input' ).on('focusout', function () {
+        setTimeout(() => {
+            $("#search-autocomplete").hide();
+        }, 100);
+    });
 
-
-    $( 'input' ).focus(function () {
-        $("#search-autocomplete").show();
-        $("#search").on("input", function () {
+    $("#search").on("input", function () {
+        if ($("#search").val().length < 3) {
             $('#search-autocomplete').empty();
-            $.get(`{{route('profile.search')}}?search=${$("#search").val()}`, function (data) {
+            $("#search-autocomplete").hide();
+            return;
+        }
 
-                $('#search-autocomplete').append('<a href="{{ URL::asset('/profile/detail') }}/'+data.results[0].name +'" class="dropdown-item" value="'+ data.results[0].name +'">'+ data.results[0].name+'</a>');
+        $.get(`{{route('profile.search')}}?search=${$("#search").val()}`, function (data) {
+            $('#search-autocomplete').empty();
 
-            });
+            data.results.forEach((result) => {
+                $('#search-autocomplete').append('<a href="{{ URL::asset('/profile/detail') }}/'+result.name +'" class="dropdown-item" value="'+ result.name +'">'+ result.name+'</a>');
+            })
+
+            if (data.results.length > 0) {
+                $("#search-autocomplete").show();
+            }
         });
-    })
+    });
 
 </script>
 

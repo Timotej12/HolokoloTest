@@ -13,9 +13,7 @@
                         <h1 class="p-lg-2">Profil</h1>
                     </div>
                     <div class="card-body text-center">
-                        @foreach ($data as $value)
-                        <h2>{{$value->name}} ma meniny {{$value->date}}</h2>
-                        @endforeach
+                        <h2>{{$data->name}} má meniny {{date('d. M. Y', strtotime($data->date))}}</h2>
                     </div>
                 </div>
             </div>

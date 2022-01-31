@@ -7,24 +7,21 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Install Laravel
-If you do not have Laravel on this link there is a guide to its installed
--https://laravel.com/docs/8.x/installation
-
-## Install Xampp
-Next you need to download xampp, where our local mysql database will be
+## MySQL database
+First of all, you need is MySQL database. For Example you can download Xampp
+where our local mysql database will be.
 https://www.apachefriends.org/download.html
 After downloading, you need to run apache and mysql
 
 ## Github
-Download the following program from github repository-
+Clone the following program from github repository-
 https://github.com/Timotej12/HolokoloTest
 
-## Command line
+## Command line/ Terminal
 Then go to the folder where you downloaded the program from 
-github using the command line.
+github using the command line or if you have Jetbrains, open project then terminal.
 
 ## Php artisan 
-Write in to the command line: php artisan DownloadNamedays. This command will download 
+Write in to the command line/terminal: `name-days:update`. This command will download/update 
 name-days data from endpoint which is located at https://nameday.abalin.net/docs/#get-name-day-for-a-specific-day 
-Then write command into the command line: php artisan serve which runs the server.
+Then write command into the command line: `php artisan serve` which runs the server.

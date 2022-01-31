@@ -10,8 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 class NameDay extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
-
-
+    
     protected $fillable = [
         'name',
         'date',

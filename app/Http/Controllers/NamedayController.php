@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-
-use Illuminate\Support\Facades\DB;
+use App\Models\NameDay;
 
 class NamedayController extends Controller
 {
+    /**
+     * Show today's nameday.
+     */
    public function index(){
        $date = date("Y-m-d");
-       $names = DB::select("Select * FROM name_days WHERE date = '$date'");
-       return view('welcome',['names'=>$names]);
+       $name = NameDay::query()->where('date', $date)->first();
+       return view('welcome', ['name' => $name]);
    }
-
-
-
 }
 
