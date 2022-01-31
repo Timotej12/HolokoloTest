@@ -17,7 +17,6 @@ class CreateNameDaysTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->date('date')->unique();
-            $table->string('search_name');
             $table->timestamps();
 
             $table->index('name');

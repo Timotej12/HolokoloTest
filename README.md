@@ -20,6 +20,7 @@ https://github.com/Timotej12/HolokoloTest
 ## Command line/ Terminal
 Then go to the folder where you downloaded the program from 
 github using the command line or if you have Jetbrains, open project then terminal.
+Run command `install composer`
 
 ## Php artisan 
 Write in to the command line/terminal: `name-days:update`. This command will download/update 

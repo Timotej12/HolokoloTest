@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'FreeCodeGram') }}</title>
+    <title>{{ config('app.name', 'Holokolo') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,46 +21,39 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
 </head>
-<body>
-<div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div class="container">
-            <div>
-                <img src="{{asset('images/Logo.png')}}" alt="Logo" style="height: 60px; width: 80px">
-            </div>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="justify-content-center">
-                    <a class="link-light ps-3" href="{{url('')}}" style="color: black; text-decoration: none">Hlavná stránka</a>
-                </div>
-               <div class="justify-content-center">
-                   <a class="link-light ps-3" href="{{url('table')}}" style="color: black; text-decoration: none">Tabuľka menín</a>
-               </div>
-                <div class="col-md-4 ">
-                    <form action="" method="get" role="search" id="search-form">
-                        <div class="input-group">
-                            <input type="text" id= "search" autocomplete="off" class="form-control" name="search" placeholder="Search Name">
-                        </div>
-                        <div class="dropdown-menu" id="search-autocomplete">
-
-
-                        </div>
-                    </form>
-
-                </div>
-
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <img src="{{asset('images/Logo.png')}}" alt="Logo" style="height: 60px; width: 80px">
+                    </li>
+                    <li class="nav-item pt-3 ps-5">
+                        <a class="link-light" href="{{url('')}}" style="color: black; text-decoration: none">Hlavná stránka</a>
+                    </li>
+                    <li class="nav-item pt-3 ps-3 ">
+                        <a class="link-light ps-3" href="{{url('table')}}" style="color: black; text-decoration: none">Tabuľka menín</a>
+                    </li>
+                </ul>
+                <form class="form-inline px-5" action="" method="get" role="search" id="search-form">
+                    <div class="input-group">
+                        <input type="text" id= "search" autocomplete="off" class="form-control" name="search" placeholder="Search Name">
+                    </div>
+                    <div class="dropdown-menu" id="search-autocomplete">
+                    </div>
+                </form>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <main class="py-4">
-        @yield('content')
-    </main>
-</div>
-</body>
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </body>
 </html>
 
 <script>

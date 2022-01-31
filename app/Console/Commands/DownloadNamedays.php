@@ -48,8 +48,8 @@ class DownloadNamedays extends Command
 
                $date = new DateTime($year . '/' . $month . '/' . $day_in_month);
                DB::table('name_days')->upsert(
-                    ['name' => $name, 'date'=> $date, 'search_name' => $name ],
-                    ['name', 'date', 'search_name']
+                    ['name' => $name, 'date'=> $date],
+                    ['name', 'date']
                );
             }
         }
